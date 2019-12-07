@@ -12,17 +12,6 @@
 #define MPI_CHUNK_INT MPI_LONG_LONG_INT
 
 /*************************************************************************
-* stores the current xadj[] and tail location information that is 
-* initially used by mapjikv2
-**************************************************************************/
-typedef struct {
-  ssize_t iend;      /* end index of the adjacency list */
-  uint32_t len;      /* the length of the "active" adjancency list */
-  uint32_t tlen;     /* the length of the "tail" part of the list */
-} ste_indices_t;
-
-
-/*************************************************************************
 * the data vault 
 **************************************************************************/
 typedef struct {
@@ -57,6 +46,10 @@ typedef struct {
   char **argv;
 } params_t;
 
+
+/*************************************************************************
+* ineed sender info
+**************************************************************************/
 typedef struct {
   int n_nbrs; /* Number of nbrs I will recv data from. */
   int *nbr_ids; /* Id of the nbr I will recv data from. */
@@ -64,6 +57,10 @@ typedef struct {
   adj_t *ind; /* actual vertex ids it needs to recv values from each processor during transfer. */
 } SendInfoTypeGK;
 
+
+/*************************************************************************
+* ineed receiver info
+**************************************************************************/
 typedef struct {
   int n_nbrs; /* Number of nbrs I will recv data from. */
   int *nbr_ids; /* Id of the nbr I will recv data from. */
@@ -71,6 +68,10 @@ typedef struct {
   adj_t *ind; /* actual vertex ids it needs to recv values from each processor during transfer. */
 } RecvInfoTypeGK;
 
+
+/*************************************************************************
+* ineed accumulate required details
+**************************************************************************/
 typedef struct {
   vtxs_t nvtxs;
   adj_t *vtx_ids;
@@ -78,6 +79,9 @@ typedef struct {
 } AccumPRDetails;
 
 
+/*************************************************************************
+* ineed receive remote nbr details
+**************************************************************************/
 typedef struct {
   vtxs_t nvtxs;
   int32_t *vtx_ids;
@@ -103,22 +107,6 @@ typedef struct matrix_info {
   ssize_t *xadj;
   adj_t *adjncy;
 } matrix_info_t;
-
-
-
-/*************************************************************************
-* sub matrix info 
-**************************************************************************/
-typedef struct smatrix_info_n {
-  vtxs_t nvtxs;
-
-  int32_t rc_blks;
-  chunk_t *vi_chunk;
-  chunk_t *vj_chunk;
-  ssize_t *xadj;
-  adj_t *adjncy;
-} smatrix_info_tn;
-
 
 
 /*************************************************************************
@@ -163,40 +151,9 @@ typedef struct matrix_info_a {
 } matrix_info_ta;
 
 
-
 /*************************************************************************
-* proc info 
-**************************************************************************/
-typedef struct proc_info {
-  int i; 
-  int j; 
-  int m_i; 
-  int m_j; 
-  matrix_info_t *la_matrix; 
-  matrix_info_t *lb_matrix; 
-  matrix_info_t *ra_matrix; 
-  matrix_info_t *rb_matrix;
-} proc_info_t; 
-
-
-
-/*************************************************************************
-* proc info 
-**************************************************************************/
-typedef struct proc_info_n {
-  int i; 
-  int j; 
-  int m_i; 
-  int m_j; 
-  matrix_info_tn *la_matrix; 
-  matrix_info_tn *lb_matrix; 
-  matrix_info_tn *ra_matrix; 
-  matrix_info_tn *rb_matrix;
-} proc_info_tn; 
-
-/**
 * blob + #bytes
-*/
+**************************************************************************/
 typedef struct blob_info {
   ssize_t membytes;
   unsigned char* blob;
