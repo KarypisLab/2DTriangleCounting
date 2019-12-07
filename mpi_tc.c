@@ -1,9 +1,6 @@
 /*!
   \file
   \brief The various triangle counting routines
-  \date Started 5/13/2017
-  \author George
-  \version\verbatim $Id: cmdline.c 20946 2017-05-10 23:12:48Z karypis $ \endverbatim
  */
 
 #include "tc.h"
