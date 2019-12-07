@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/21993/libs/GKlib/trunk/test
+END
+csrcnv.c
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/21968/libs/GKlib/trunk/test/csrcnv.c
+END
+m2mnbrs.c
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/19315/libs/GKlib/trunk/test/m2mnbrs.c
+END
+fis.c
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/18518/libs/GKlib/trunk/test/fis.c
+END
+gkgraph.c
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/21993/libs/GKlib/trunk/test/gkgraph.c
+END
+cmpnbrs.c
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/19318/libs/GKlib/trunk/test/cmpnbrs.c
+END
+splatt2svd.c
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/19912/libs/GKlib/trunk/test/splatt2svd.c
+END
+rw.c
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/18791/libs/GKlib/trunk/test/rw.c
+END
+gksort.c
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/18516/libs/GKlib/trunk/test/gksort.c
+END
+strings.c
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/18516/libs/GKlib/trunk/test/strings.c
+END
+grKx.c
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/18518/libs/GKlib/trunk/test/grKx.c
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/21976/libs/GKlib/trunk/test/CMakeLists.txt
+END

@@ -1,0 +1,7 @@
+/home/karypisg/tomxx030/distr_tc_cp/graphchallenge/distr_triangle_biggraphs/2DTriangleCounting/build/Linux-x86_64/CMakeFiles/install/strip.dir
+/home/karypisg/tomxx030/distr_tc_cp/graphchallenge/distr_triangle_biggraphs/2DTriangleCounting/build/Linux-x86_64/CMakeFiles/edit_cache.dir
+/home/karypisg/tomxx030/distr_tc_cp/graphchallenge/distr_triangle_biggraphs/2DTriangleCounting/build/Linux-x86_64/CMakeFiles/mpitc.dir
+/home/karypisg/tomxx030/distr_tc_cp/graphchallenge/distr_triangle_biggraphs/2DTriangleCounting/build/Linux-x86_64/CMakeFiles/rebuild_cache.dir
+/home/karypisg/tomxx030/distr_tc_cp/graphchallenge/distr_triangle_biggraphs/2DTriangleCounting/build/Linux-x86_64/CMakeFiles/list_install_components.dir
+/home/karypisg/tomxx030/distr_tc_cp/graphchallenge/distr_triangle_biggraphs/2DTriangleCounting/build/Linux-x86_64/CMakeFiles/install/local.dir
+/home/karypisg/tomxx030/distr_tc_cp/graphchallenge/distr_triangle_biggraphs/2DTriangleCounting/build/Linux-x86_64/CMakeFiles/install.dir
