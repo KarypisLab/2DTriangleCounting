@@ -173,7 +173,7 @@ params_t *getcmdline_params(int argc, char *argv[])
   }
 
   /* Get the operation to be performed */
-  if (argc-gk_optind != 1) {
+  if (argc-gk_optind != 1 && params->iftype != 1) {
     printf("Missing required parameters.\n  Use %s -help for a summary of the options.\n", argv[0]);
     exit(EXIT_FAILURE);
   }

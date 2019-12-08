@@ -783,17 +783,19 @@ vault_t *loadData(params_t *params)
 
   gk_graph_t *graph = malloc(sizeof(*graph));
 
-  /* read the graph */
-  printf("Reading graph %s...\n", params->infile);
-  GKASSERT(gk_fexists(params->infile)); 
-
   switch (params->iftype) {
-    case IFTYPE_RMAT:
-      ParallelReadGraphRMAT(graph, params->scale, MPI_COMM_WORLD);
+    case IFTYPE_METIS:
+      /* read the graph */
+      printf("Reading graph %s...\n", params->infile);
+      GKASSERT(gk_fexists(params->infile)); 
+      ParallelReadGraphMETIS(graph, params->infile, MPI_COMM_WORLD);
       break;
 
-    case IFTYPE_METIS:
-      ParallelReadGraphMETIS(graph, params->infile, MPI_COMM_WORLD);
+    case IFTYPE_RMAT:
+      if(params->infile)
+        printf("Ignoring given input file, RMAT graph with scale %d being generated..\n", params->scale);
+      
+      ParallelReadGraphRMAT(graph, params->scale, MPI_COMM_WORLD);
       break;
 
     default:

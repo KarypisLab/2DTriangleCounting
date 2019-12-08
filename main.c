@@ -5,6 +5,32 @@
 
 #include "tc.h"
 
+int _floor(double x) {
+  return (int)x;
+}
+
+int isPerfectSquare(int x) {
+  if (x==1) return 1; 
+  int t, l, h;
+  l = 0;
+  h = _floor(x/2);
+  t = l + _floor((h-l)/2);
+  while (h-l >= 15) {
+    if (t*t == x)
+      return 1;
+    t = l + _floor((h-l)/2);
+    if (t*t < x) 
+      l = t;
+    else 
+      h = t;
+  }
+  for (int i=l; i<=h; i++)
+    if (i*i == x)
+      return 1;
+
+  return 0;
+}
+
 /*************************************************************************
 * The entry point 
 **************************************************************************/
@@ -22,6 +48,13 @@ int main(int argc, char *argv[])
   int mype, npes;
   MPI_Comm_size(MPI_COMM_WORLD, &npes);
   MPI_Comm_rank(MPI_COMM_WORLD, &mype);
+
+  //if (_floor(sqrt(npes))*_floor(sqrt(npes))!=npes) {
+  if (!isPerfectSquare(npes)) {
+    printf("#ranks should be a perfect square!\n");
+    MPI_Finalize();
+    exit(0);
+  }
   
   vault = loadData(params);
 
@@ -29,8 +62,11 @@ int main(int argc, char *argv[])
 
   if (mype == 0) {
     printf("\n-----------------\n");
-    printf("infile: %s\n", params->infile);
-    printf("#nvtxs: %d\n", vault->graph->nvtxs);
+    if (params->iftype != 1)
+      printf("infile: %s\n", params->infile);
+    else
+      printf("generating RMAT file with %d..\n", params->scale);
+    printf("per proc #nvtxs: %d\n", vault->graph->nvtxs);
     printf("tctype: %s, otype: %s\n", tctypenames[params->tctype], otypenames[params->otype]);
     printf("\n");
   }

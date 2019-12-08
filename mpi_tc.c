@@ -669,32 +669,6 @@ void GetValues(
   free(sdispls);   
   #endif
 
-  /* printf("myid %d rinfo values: ", mype);
-  for (i=0; i<rinfo->n_nbrs; i++) {
-    printf(" %d: (", rinfo->nbr_ids[i]);
-    for (j=rinfo->ptr[i]; j<rinfo->ptr[i+1]; j++)
-      printf(" %"PRId32" ", rinfo->ind[j]);
-    printf("), ");
-  }
-  printf("\n");
-  printf("myid %d rinfo values: ", mype);
-  for (i=0; i<rinfo->n_nbrs; i++) {
-    printf(" %d: (", rinfo->nbr_ids[i]);
-    for (j=rinfo->ptr[i]; j<rinfo->ptr[i+1]; j++)
-      printf(" %zd ", local_vals[j]);
-    printf("), ");
-  }
-  printf("\n");
-
-  printf("myid %d sinfo values %d: ", mype, sinfo->ptr[sinfo->n_nbrs]);
-  for (i=0; i<sinfo->n_nbrs; i++) {
-    printf(" %d: (", sinfo->nbr_ids[i]);
-    for (j=sinfo->ptr[i]; j<sinfo->ptr[i+1]; j++)
-      printf(" %"PRId32" ", sinfo->ind[j]);
-    printf("), ");
-  }
-  printf("\n"); */
-
   /* Post the recvs. */
   for(i=0; i<sinfo->n_nbrs; i++) {
     MPI_Irecv(
@@ -719,13 +693,6 @@ void GetValues(
   MPI_Waitall(rinfo->n_nbrs, recv_reqs, statuses); 
   #ifdef isr
   #endif
-    
-  /* printf("mype: %d remote vals: ", mype);
-  for (i=0; i<sinfo->ptr[sinfo->n_nbrs]; i++) {
-    printf(" %zd ", remote_vals[i]);
-  }
-  printf("\n"); */
-
 }
 
 matrix_info_ta *mpitc_ExtractUpperLowerAdjncy(
