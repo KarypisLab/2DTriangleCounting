@@ -99,7 +99,7 @@ RUNRESULT: small-graph.metis mapjik2d 10 16 0.0543 0.001 0.000 0.000
 The parallel algorithm implemented is described in
 
 [__"A 2D Parallel Triangle Counting Algorithm for Distributed-Memory Architectures"__ Ancy Sarah Tom and George
-Karypis. Proceedings of the 48th International Conference on Parallel Processing (ICPP),
-2019](https://arxiv.org/abs/1907.09575)
+Karypis, Proceedings of the 48th International Conference on Parallel Processing (ICPP),
+2019.](https://arxiv.org/abs/1907.09575)
 
 
