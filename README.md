@@ -70,29 +70,29 @@ edges (i.e., (u,v) and (v,u)).
 
 Here is the output of a sample run:
 ```
-mpirun -np 4 ./build/Linux-x86_64/mpitc  -iftype=metis small-graph.metis 
-./build/Linux-x86_64/mpitc -iftype=metis -scale=10 small-graph.metis 
-./build/Linux-x86_64/mpitc -iftype=metis -scale=10 small-graph.metis 
-./build/Linux-x86_64/mpitc -iftype=metis -scale=10 small-graph.metis 
-./build/Linux-x86_64/mpitc -iftype=metis -scale=10 small-graph.metis 
-Reading graph small-graph.metis...
-Reading graph small-graph.metis...
-Reading graph small-graph.metis...
-Reading graph small-graph.metis...
+mpirun -np 4 ./build/Linux-x86_64/mpitc  -iftype=metis  data/small-graph.metis
+./build/Linux-x86_64/mpitc -iftype=metis data/small-graph.metis 
+./build/Linux-x86_64/mpitc -iftype=metis data/small-graph.metis 
+./build/Linux-x86_64/mpitc -iftype=metis data/small-graph.metis 
+./build/Linux-x86_64/mpitc -iftype=metis data/small-graph.metis 
+Reading graph data/small-graph.metis...
+Reading graph data/small-graph.metis...
+Reading graph data/small-graph.metis...
+Reading graph data/small-graph.metis...
 
 -----------------
-infile: small-graph.metis
+infile: data/small-graph.metis
 per proc #nvtxs: 3
 tctype: mapjik2d, otype: incd
 
-Overall separate timer: 0.000740. 
-#triangles: 16; rate: 0.0543 MT/sec
-wall clock time:0.001s
-pre-processing:0.000s
-triangle counting:0.000s
+Overall separate timer: 0.000668. 
+#triangles: 16; rate: 0.0613 MT/sec
+wall clock time:  0.001s
+pre-processing:   0.000s
+triangle counting:  0.000s
 
 -----------------
-RUNRESULT: small-graph.metis mapjik2d 10 16 0.0543 0.001 0.000 0.000
+RUNRESULT: data/small-graph.metis mapjik2d 10 16 0.0613 0.001 0.000 0.000
 ```
 
 ## Citing 
