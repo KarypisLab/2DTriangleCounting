@@ -65,7 +65,7 @@ int main(int argc, char *argv[])
     if (params->iftype != 1)
       printf("infile: %s\n", params->infile);
     else
-      printf("generating RMAT file with %d..\n", params->scale);
+      printf("generating RMAT file with scale %d..\n", params->scale);
     printf("per proc #nvtxs: %d\n", vault->graph->nvtxs);
     printf("tctype: %s, otype: %s\n", tctypenames[params->tctype], otypenames[params->otype]);
     printf("\n");
