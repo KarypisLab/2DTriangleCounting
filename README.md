@@ -2,7 +2,7 @@
 An MPI-based 2D parallel triangle counting algorithm for distributed-memory architectures. 
 
 
-## Build requirements with versions currently used in our program
+## Build requirements with versions currently used
  - CMake (v3.10.2). 
  - GCC (v8.2.0). 
  - OpenMPI (v4.0.0). 
@@ -64,12 +64,13 @@ Usage: mpirun -np <#ranks> ./build/Linux-x86_64/mpitc [options] infile
 The program supports two formats for its input files: 
 - [Metis](http://www.cs.umn.edu/~metis) format used in the graph partitioning program.
 - RMAT format generated using an external library called [Grappa](https://github.com/uwsampa/grappa) to generate these graphs. 
+
 Note that the graph has to be undirected and it needs to include both pairs of
 edges (i.e., (u,v) and (v,u)).
 
 Here is the output of a sample run:
 ```
-mpirun -np 4 ./build/Linux-x86_64/mpitc  -iftype=metis -scale=10 small-graph.metis 
+mpirun -np 4 ./build/Linux-x86_64/mpitc  -iftype=metis small-graph.metis 
 ./build/Linux-x86_64/mpitc -iftype=metis -scale=10 small-graph.metis 
 ./build/Linux-x86_64/mpitc -iftype=metis -scale=10 small-graph.metis 
 ./build/Linux-x86_64/mpitc -iftype=metis -scale=10 small-graph.metis 
@@ -95,7 +96,7 @@ RUNRESULT: small-graph.metis mapjik2d 10 16 0.0543 0.001 0.000 0.000
 ```
 
 ## Citing 
-The parallel algorithm implemented is based on the one described in
+The parallel algorithm implemented is described in
 
 [__"A 2D Parallel Triangle Counting Algorithm for Distributed-Memory Architectures"__ Ancy Sarah Tom and George
 Karypis. Proceedings of the 48th International Conference on Parallel Processing (ICPP),
